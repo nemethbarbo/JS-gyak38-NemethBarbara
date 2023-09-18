@@ -1,18 +1,19 @@
 /*Feladat: Hozzunk létre függvényt, amely bemenő paramétere egy tömb,
 visszatérése pedig egy egész szám, ennyi prímszám található a tömbben.*/
-function primMegszamolTombben(tomb){
-    let primekSzama = 0;
-    function primEldont(szam){
-        if (szam < 2) {
+function primEldont(szam){
+    if (szam < 2) {
+        return false;
+    }
+    for (let i = 2; i <= Math.sqrt(szam); i++) {
+        if (szam % i == 0) {
             return false;
         }
-        for (let i = 2; i <= Math.sqrt(szam); i++) {
-            if (szam % i == 0) {
-                return false;
-            }
-        }
-        return true;
     }
+    return true;
+}
+
+function primMegszamolTombben(tomb){
+    let primekSzama = 0;
     for (let i = 0; i < tomb.length; i++) {
         if (primEldont(tomb[i])) {
             primekSzama++;
@@ -22,7 +23,7 @@ function primMegszamolTombben(tomb){
     return primekSzama;
 }
 
-const tomb = [45, 67, 3, 89, 12, 46, 90, 2, 24, 14];
+const tomb = [45, 67, 3, 89, 12, 46, 90, 2, 24, 14, 5];
 
 function primKiirTombben(){
     document.getElementById("primek").innerHTML = "Prím számok száma a tömbben: "+primMegszamolTombben(tomb);

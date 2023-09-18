@@ -26,7 +26,7 @@ function primMegszamolTombben(tomb){
 const tomb = [45, 67, 3, 89, 12, 46, 90, 2, 24, 14, 5];
 
 function primKiirTombben(){
-    document.getElementById("primek").innerHTML = "Prím számok száma a tömbben: "+primMegszamolTombben(tomb);
+    document.getElementById("primek").innerHTML = "A tömb elemei: "+ tomb + ". Prím számok száma a tömbben: "+primMegszamolTombben(tomb);
 }
 
 /*2. Feladat: Készítsünk alkalmazást, amely űrlap segítségével egy leltárszámról eldönti jó –e a
